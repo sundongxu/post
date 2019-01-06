@@ -316,7 +316,7 @@ func extractInt64(v reflect.Value) (int64, error) {
 // Extract Int32
 func extractInt32(v reflect.Value) (int32, error) {
   if reflect.Kind() != reflect.Int32 {
-    return int32(0), errors.New("Invalid input")
+    panic("invalid input")
   }
   var intVal int64
   intVal = v.Int()
