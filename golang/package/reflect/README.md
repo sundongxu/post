@@ -5,7 +5,7 @@
 
 Golang 语言实现了反射，反射机制就是在运行时动态的调用对象的方法和属性，官方自带的 reflect 包就是反射相关的，只要包含这个包就可以使用。实际使用中可以先不考虑使用 reflect 对性能的影响，先实现功能，再利用 benchmark test 去优化。
 
-** 什么时候应该用 reflect**
+**什么时候应该用 reflect**
 
 1. 首先你得确认你会使用 reflect pkg，并且不是乱用
 2. 更好的抽象和约束，减少 bug 几率
@@ -959,7 +959,7 @@ func extractStruct(v reflect.Value) (interface{}, error) {
 }
 ```
 
-## 3. 了解如何让 '静态语言' 实现 '动态使用'
+## 3. 了解如何让 '静态语言' 实现 '动态使用' 
 
 ### 3.1 首先必须了解一下 addressable
 Go 语言规范中规定了可寻址 (addressable) 对象的定义
@@ -1156,7 +1156,7 @@ x20: [1 2 3]    can be addressable and set: false, false
 ```
 
 ### 3.3 通过 reflect.Value 设置实际变量的值
-`reflect.Value` 是通过 `reflect.ValueOf(X)` 获得的，只有当 `X` 是指针的时候，才可以通过 `reflec.Value` 修改实际变量 X 的值，即：要修改反射类型的对象就一定要保证其值是 **addressable** 的。
+`reflect.Value`是通过`reflect.ValueOf(X)`获得的，只有当`X`是指针的时候，才可以通过`reflec.Value`修改实际变量X的值，即：要修改反射类型的对象就一定要保证其值是**addressable** 的。
 
 看个例子就懂了:
 
@@ -1173,7 +1173,7 @@ func main() {
 	var num float64 = 1.2345
 	fmt.Println("old value of pointer:", num)
 
-	// 通过 reflect.ValueOf 获取 num 中的 reflect.Value，注意，参数必须是指针才能修改其值
+	// 通过reflect.ValueOf获取num中的reflect.Value，注意，参数必须是指针才能修改其值
 	pointer := reflect.ValueOf(&num)
 	newValue := pointer.Elem()
 
@@ -1185,9 +1185,9 @@ func main() {
 	fmt.Println("new value of pointer:", num)
 
 	////////////////////
-	// 如果 reflect.ValueOf 的参数不是指针，会如何？
+	// 如果reflect.ValueOf的参数不是指针，会如何？
 	pointer = reflect.ValueOf(num)
-	//newValue = pointer.Elem() // 如果非指针，这里直接 panic，“panic: reflect: call of reflect.Value.Elem on float64 Value”
+	//newValue = pointer.Elem() // 如果非指针，这里直接panic，“panic: reflect: call of reflect.Value.Elem on float64 Value”
 }
 ```
 
@@ -1202,17 +1202,17 @@ new value of pointer: 77
 
 解释一下:
 
-- 需要传入的参数是 `*float64` 这个指针，然后可以通过 `pointer.Elem()` 去获取所指向的 `Value`，注意一定要是指针
+- 需要传入的参数是`*float64`这个指针，然后可以通过`pointer.Elem()`去获取所指向的`Value`，注意一定要是指针
 - 如果传入的参数不是指针，而是变量，那么
-    - 通过 `Elem` 获取原始值对应的对象则直接 `panic`
-    - 通过 `CanSet` 方法查询是否可以设置返回 `false`
-- `newValue.CantSet()` 表示是否可以重新设置其值，如果输出的是 `true` 则可修改，否则不能修改，修改完之后再进行打印发现真的已经修改了
+    - 通过`Elem`获取原始值对应的对象则直接`panic`
+    - 通过`CanSet`方法查询是否可以设置返回`false`
+- `newValue.CantSet()`表示是否可以重新设置其值，如果输出的是`true`则可修改，否则不能修改，修改完之后再进行打印发现真的已经修改了
 - `reflect.Value.Elem()` 表示获取原始值对应的反射对象，只有原始对象才能修改，当前反射对象是不能修改的
-- 也就是说如果要修改反射类型对象，其值必须是 **addressable** (对应的要传入的是指针，同时要通过 `Elem` 方法获取原始值对应的反射对象)
+- 也就是说如果要修改反射类型对象，其值必须是**addressable** (对应的要传入的是指针，同时要通过`Elem`方法获取原始值对应的反射对象)
 - `struct` 或者 `struct` 的嵌套都是一样的判断处理方式
 
-### 3.6 已知原有类型进行转换
-已知类型后转换为其对应的类型的做法如下，直接通过 Interface 方法然后强制转换，如下：
+### 3.4 已知原有类型进行转换
+已知类型后转换为其对应的类型的做法如下，直接通过Interface方法然后强制转换，如下：
 
 ```golang
 realValue := value.Interface().(已知的类型)
@@ -1232,9 +1232,9 @@ func main() {
 	pointer := reflect.ValueOf(&num)
 	value := reflect.ValueOf(num)
 
-	// 可以理解为 “强制转换”，但是需要注意的时候，转换的时候，如果转换的类型不完全符合，则直接 panic
+	// 可以理解为“强制转换”，但是需要注意的时候，转换的时候，如果转换的类型不完全符合，则直接panic
 	// Golang 对类型要求非常严格，类型一定要完全符合
-	// 如下两个，一个是 * float64，一个是 float64，如果弄混，则会 panic
+	// 如下两个，一个是*float64，一个是float64，如果弄混，则会panic
 	convertPointer := pointer.Interface().(*float64)
 	convertValue := value.Interface().(float64)
 
@@ -1252,12 +1252,12 @@ func main() {
 
 解释一下:
 
-- 转换的时候，如果转换的类型不完全符合，则直接 panic，类型要求非常严格！
+- 转换的时候，如果转换的类型不完全符合，则直接panic，类型要求非常严格！
 - 转换的时候，要区分是指针还是值类型
-- 反射可以将 ` 反射类型对象 ` 再重新转换为 ` 接口类型变量 `
+- 反射可以将`反射类型对象`再重新转换为`接口类型变量`
 
-### 3.7 探测未知类型
-很多情况下，我们可能并不知道其具体类型，那么这个时候，该如何做呢？需要我们进行遍历探测其 `Field` 来得知，示例如下
+### 3.5 探测未知类型
+很多情况下，我们可能并不知道其具体类型，那么这个时候，该如何做呢？需要我们进行遍历探测其`Field`来得知，示例如下
 
 ```golang
 package main
@@ -1295,18 +1295,18 @@ func DoFiledAndMethod(input interface{}) {
 	fmt.Println("get all Fields is:", getValue)
 
 	// 获取方法字段
-	// 1. 先获取 interface 的 reflect.Type，然后通过 NumField 进行遍历
-	// 2. 再通过 reflect.Type 的 Field 获取其 Field
-	// 3. 最后通过 Field 的 Interface() 得到对应的 value
-	for i := 0; i <getType.NumField(); i++ {
+	// 1. 先获取interface的reflect.Type，然后通过NumField进行遍历
+	// 2. 再通过reflect.Type的Field获取其Field
+	// 3. 最后通过Field的Interface()得到对应的value
+	for i := 0; i < getType.NumField(); i++ {
 		field := getType.Field(i)
 		value := getValue.Field(i).Interface()
 		fmt.Printf("%s: %v = %v\n", field.Name, field.Type, value)
 	}
 
 	// 获取方法
-	// 1. 先获取 interface 的 reflect.Type，然后通过. NumMethod 进行遍历
-	for i := 0; i <getType.NumMethod(); i++ {
+	// 1. 先获取interface的reflect.Type，然后通过.NumMethod进行遍历
+	for i := 0; i < getType.NumMethod(); i++ {
 		m := getType.Method(i)
 		fmt.Printf("%s: %v\n", m.Name, m.Type)
 	}
@@ -1326,17 +1326,87 @@ ReflectCallFunc: func(main.User)
 
 解释一下:
 
-通过运行结果可以得知获取未知类型的 `interface` 的具体变量及其类型的步骤为:
-- 先获取 `interface` 的 `reflect.Type`，然后通过 `NumField` 进行遍历
-- 再通过 `reflect.Type` 的 `Field` 获取其 `Field`
-- 最后通过 `Field` 的 Interface() 得到对应的 `value`
+通过运行结果可以得知获取未知类型的`interface`的具体变量及其类型的步骤为:
+- 先获取`interface`的`reflect.Type`，然后通过`NumField`进行遍历
+- 再通过`reflect.Type`的`Field`获取其 `Field`
+- 最后通过`Field`的Interface()得到对应的`value`
 
-通过运行结果可以得知获取未知类型的 `interface` 的所属方法（函数）的步骤为：
-- 先获取 `interface` 的 `reflect.Type`，然后通过 `NumMethod` 进行遍历
-- 再分别通过 `reflect.Type` 的 `Method` 获取对应的真实的方法（函数）
-- 最后对结果取其 `Name` 和 `Type` 得知具体的方法名
-- 也就是说反射可以将 “反射类型对象” 再重新转换为 ` 接口类型变量 interface{}`
+通过运行结果可以得知获取未知类型的`interface`的所属方法（函数）的步骤为：
+- 先获取`interface`的`reflect.Type`，然后通过`NumMethod`进行遍历
+- 再分别通过`reflect.Type`的`Method`获取对应的真实的方法（函数）
+- 最后对结果取其`Name`和`Type`得知具体的方法名
+- 也就是说反射可以将“反射类型对象”再重新转换为`接口类型变量 interface{}`
 - `struct` 或者 `struct` 的嵌套都是一样的判断处理方式
 
-### 3.8 动态调用方法
-TBD
+### 3.6 动态调用方法
+结构体的方法我们不光可以正常的调用，还可以使用反射进行调用。要想反射调用，我们先要获取到需要调用的方法，然后进行传参调用，如下示例：
+
+```
+package main
+
+import (
+	"fmt"
+	"reflect"
+)
+func main() {
+	u := User{"张三",20}
+	v := reflect.ValueOf(u)
+
+	mPrint := v.MethodByName("Print")
+	fmt.Printf("mPrint is Valid: %v\n", mPrint.IsValid())
+	
+	args := []reflect.Value{reflect.ValueOf("前缀")}
+	fmt.Println(mPrint.Call(args))
+
+}
+
+type User struct{
+	Name string
+	Age int
+}
+
+func (u User) Print(prfix string){
+	fmt.Printf("%s:Name is %s,Age is %d",prfix,u.Name,u.Age)
+}
+```
+
+// Output
+
+```
+mPrint is Valid: true
+前缀:Name is 张三,Age is 20[]
+```
+
+解释一下:
+- `reflect.Value > func (v Value) MethodByName(name string) Value`方法可以让我们根据一个方法名获取一个方法对象，然后我们构建好该方法需要的参数，最后调用`Call`就达到了动态调用方法的目的。
+- 获取到的方法我们可以使用`IsValid` 来判断是否可用（存在）。
+
+- 这里的参数是一个`Value`类型的数组，所以需要的参数，我们必须要通过`reflect.Value > func ValueOf(i interface{}) Value`函数进行转换。
+
+### 3.7 struct tag 解析
+想要获取 struct tag 只需要通过 `field` 的 `Tag` 函数就能获取[StructTag](https://golang.org/src/reflect/type.go?s=30991:31012#L1111)。
+
+`StructTag` 提供了 `Lookup` 查询 tag key 对应值的方法，还是比较方便使用
+
+```
+type T struct {
+    A int    `json:"aaa" test:"testaaa"`
+    B string `json:"bbb" test:"testbbb"`
+}
+
+func main() {
+    t := T{
+        A: 123,
+        B: "hello",
+    }
+    tt := reflect.TypeOf(t)
+    for i := 0; i < tt.NumField(); i++ {
+        field := tt.Field(i)
+        if json, ok := field.Tag.Lookup("json"); ok {
+            fmt.Println(json)
+        }
+        test := field.Tag.Get("test")
+        fmt.Println(test)
+    }
+}
+```
