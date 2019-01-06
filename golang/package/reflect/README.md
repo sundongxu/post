@@ -1410,3 +1410,8 @@ func main() {
     }
 }
 ```
+
+## 4 反射三定律
+- 反射可以将 `interface{}` 转换为 `reflect.Type` 和 `reflect.Value`
+- 反射可以将`reflect.Type` 和 `reflect.Value`转换为`interface{}`
+- 如果要修改 `反射类型对象`，其值必须是 **可写的（settable）**。
