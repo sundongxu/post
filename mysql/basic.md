@@ -1,6 +1,6 @@
 ---
 title: "MySQL的基础使用相关知识"
-date: 2019-01-13T18:45:26+08:00
+date: 2017-01-13T18:45:26+08:00
 categories:
     - MySQL
 tags: 
