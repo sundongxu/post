@@ -1,5 +1,5 @@
 ---
-title: "Danger"
+title: "js 保留关键字以及危险变量名"
 date: 2016-10-14T22:30:56+08:00
 categories:
     - Javascript

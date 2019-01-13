@@ -1,5 +1,5 @@
 ---
-title: "Intro 1"
+title: "js intro 基本介绍"
 date: 2016-10-15T22:32:36+08:00
 categories:
     - Javascript
