@@ -1,5 +1,6 @@
 ---
 title:  初步了解 golang bufio pkg
+date: 2018-10-13T21:54:10+08:00
 categories:
     - Golang
 tags: 

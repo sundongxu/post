@@ -1,5 +1,6 @@
 ---
 title: 如何写好 golang 代码的一些 tips
+date: 2018-07-02T21:12:55+08:00
 categories:
     - Golang
 tags: 

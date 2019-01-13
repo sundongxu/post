@@ -1,5 +1,6 @@
 ---
 title: Go Interface 从理解到深入
+date: 2018-09-13T18:24:50+08:00
 categories:
     - Golang
 tags: 
