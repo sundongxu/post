@@ -9,6 +9,7 @@ basic:
 
 upgrade:
 - [interface 从理解到深入](golang/upgrade/interface.md)
+- [database/sql: Stmt的使用以及坑](golang/upgrade/database.sql.driver.stmt.md)
 
 package:
 - [bufio 如何使用](golang/package/bufio.md)
