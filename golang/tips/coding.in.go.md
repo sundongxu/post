@@ -4,7 +4,7 @@ date: 2018-07-02T21:12:55+08:00
 categories:
     - Golang
 tags: 
-    - golang
+    - Golang
     - tips
 ---
 

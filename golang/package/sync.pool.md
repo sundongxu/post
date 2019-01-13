@@ -4,7 +4,7 @@ date: 2018-11-13T22:52:14+08:00
 categories:
     - Golang
 tags: 
-    - golang
+    - Golang
     - sync
 ---
 

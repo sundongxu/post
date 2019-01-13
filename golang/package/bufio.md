@@ -4,7 +4,7 @@ date: 2018-10-13T21:54:10+08:00
 categories:
     - Golang
 tags: 
-    - golang
+    - Golang
     - bufio
 ---
 

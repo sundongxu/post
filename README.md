@@ -4,6 +4,12 @@
 
 ## Golang
 
+basic:
+- [Go Modules 简单介绍](golang/basic/go.mod.md)
+
+upgrade:
+- [interface 从理解到深入](golang/upgrade/interface.md)
+
 package:
 - [bufio 如何使用](golang/package/bufio.md)
 - [reflect 如何使用](golang/package/reflect.md)
@@ -11,9 +17,6 @@ package:
 
 tips:
 - [一些简单的代码规范](golang/tips/coding.in.go.md)
-
-basic:
-- [Interface 从理解到深入](golang/basic/interface.md)
 
 ## MySQL
 
