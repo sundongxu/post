@@ -1,3 +1,12 @@
+---
+title:  初步了解 golang bufio pkg
+categories:
+    - Golang
+tags: 
+    - golang
+    - bufio
+---
+
 # bufio package in Golang
 
 golang 通过 package [bufio](https://golang.org/pkg/bufio/) 来支持 buffered I/O。

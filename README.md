@@ -5,8 +5,8 @@
 ## golang
 
 package:
-- [bufio 如何使用](golang/package/bufio/README.md)
-- [reflect 如何使用](golang/package/reflect/README.md)
+- [bufio 如何使用](golang/package/bufio.md)
+- [reflect 如何使用](golang/package/reflect.md)
 
 tips:
 - [一些简单的代码规范](golang/tips/coding.in.go.md)

@@ -1,3 +1,11 @@
+---
+title: Go Interface 从理解到深入
+categories:
+    - Golang
+tags: 
+    - golang
+    - interface
+---
 
 # Go Interface 从理解到深入
 如果说 goroutine 和 channel 是 Go 并发的两大基石，那么接口是 Go 语言编程中数据类型的关键。在 Go 语言的实际编程中，几乎所有的数据结构都围绕接口展开，接口是 Go 语言中所有数据结构的核心

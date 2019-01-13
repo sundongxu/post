@@ -1,3 +1,12 @@
+---
+title: 如何写好 golang 代码的一些 tips
+categories:
+    - Golang
+tags: 
+    - golang
+    - tips
+---
+
 # 如何写好 golang 代码的一些 tips
 
 ## 1. 首先需要知道的概念

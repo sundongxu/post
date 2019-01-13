@@ -1,3 +1,12 @@
+---
+title: 初步了解 golang reflect pkg
+categories:
+    - Golang
+tags: 
+    - golang
+    - reflect
+---
+
 # 初步了解 golang reflect pkg
 [TOC]
 
