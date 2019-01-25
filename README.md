@@ -23,10 +23,6 @@ tips:
 
 - [一些简单的代码规范](golang/tips/coding.in.go.md)
 
-## Linux
-
-- [basic usage](linux/basic_usage)
-
 ## MySQL
 
 - [MySQL 基础入门知识](mysql/basic.md)
