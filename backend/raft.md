@@ -1,4 +1,13 @@
-# 从入门到放弃 - Raft
+---
+title: "# 从入门到放弃 - Raft"
+date: 2019-03-04T23:55:47+08:00
+categories:
+    - Backend
+    - Raft
+tags:
+    - Backend
+    - Raft
+---
 根据 Raft 中文翻译和各种来源，按照自己更好理解的方式进行重新组织和增加一些说明
 
 ![v2-bb6e4db60499a1d5fd725a9d5e7bac30_1200x500](https://i.imgur.com/vzqlOx5.jpg)
