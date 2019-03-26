@@ -8,15 +8,13 @@ tags:
     - Backend
     - Raft
 ---
-根据 Raft 中文翻译和各种来源，按照自己更好理解的方式进行重新组织和增加一些说明
+根据 [Raft 中文翻译](https://github.com/maemual/raft-zh_cn/blob/master/raft-zh_cn.md)和各种来源，按照自己更好理解的方式进行重新组织和增加一些说明
 
 ![v2-bb6e4db60499a1d5fd725a9d5e7bac30_1200x500](https://i.imgur.com/vzqlOx5.jpg)
 
 [TOC]
 
 # TL;DR
-
-
 根据作者的话来说，Raft 算法是为了 **寻找一种易于理解的一致性算法**，作为管理复制日志的一致性算法，提供了和 Paxos 算法相同的功能和性能。(顺带吐槽 Paxos 难以理解)
 
 Raft 算法为了能够更佳方便理解，采用两种通常适用的技术:
