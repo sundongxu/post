@@ -1,10 +1,8 @@
 ---
-title: "# 从入门到放弃 - Raft"
+title: "从入门到放弃 - Raft"
 date: 2019-03-04T23:55:47+08:00
 categories:
     - Backend
-    - Raft
-    - 从入门到放弃
 tags:
     - Backend
     - Raft
