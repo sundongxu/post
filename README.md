@@ -2,16 +2,16 @@
 
 个人随手整理的一些文章
 
+## Backend
+
+- [DNS 域名系统](backend/dns.md)
+- [从入门到放弃 - Raft](backend/raft.md)
+
 ## Golang
 
 basic:
 
 - [Go Modules 简单介绍](golang/basic/go.mod.md)
-
-upgrade:
-
-- [interface 从理解到深入](golang/upgrade/interface.md)
-- [database/sql: Stmt的使用以及坑](golang/upgrade/database.sql.driver.stmt.md)
 
 package:
 
@@ -22,6 +22,12 @@ package:
 tips:
 
 - [一些简单的代码规范](golang/tips/coding.in.go.md)
+
+upgrade:
+
+- [interface 从理解到深入](golang/upgrade/interface.md)
+- [database/sql: Stmt的使用以及坑](golang/upgrade/database.sql.driver.stmt.md)
+- [][Go 内存排布](golang/upgrade/memory.layout.md)
 
 ## MySQL
 
