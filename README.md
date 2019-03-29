@@ -27,8 +27,8 @@ upgrade:
 
 - [interface 从理解到深入](golang/upgrade/interface.md)
 - [database/sql: Stmt的使用以及坑](golang/upgrade/database.sql.driver.stmt.md)
-- [Go 内存排布](golang/upgrade/memory.layout.md)
-- [x][](golang/upgrade/new.vs.make.md )
+- [内存排布](golang/upgrade/memory.layout.md)
+- [x][new 与 make 的差别](golang/upgrade/new.vs.make.md )
 
 ## MySQL
 
