@@ -12,6 +12,7 @@
 basic:
 
 - [Go Modules 简单介绍](golang/basic/go.mod.md)
+- [x][channel 使用归纳](golang/basic/channel.important.md)
 
 package:
 
