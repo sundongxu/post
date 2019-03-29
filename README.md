@@ -22,13 +22,19 @@ package:
 tips:
 
 - [一些简单的代码规范](golang/tips/coding.in.go.md)
+- [x][new 与 make 的差别](golang/tips/new.vs.make.md)
 
 upgrade:
 
 - [interface 从理解到深入](golang/upgrade/interface.md)
 - [database/sql: Stmt的使用以及坑](golang/upgrade/database.sql.driver.stmt.md)
 - [内存排布](golang/upgrade/memory.layout.md)
-- [x][new 与 make 的差别](golang/upgrade/new.vs.make.md )
+- [x][GPM 模型](golang/upgrade/gpm.md)
+- [x][指针陷阱](golang/upgrade/pointer.trap.md)
+- [x][内存管理](golang/upgrade/memory.alloc.md)
+- [x][GC 介绍](golang/upgrade/gc.intro.md)
+- [x][groutine 调度介绍](golang/upgrade/groutine.schduler.md)
+- [x][channel 调度介绍](golang/upgrade/channel.schduler.md)
 
 ## MySQL
 
