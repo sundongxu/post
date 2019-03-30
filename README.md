@@ -23,7 +23,7 @@ package:
 tips:
 
 - [一些简单的代码规范](golang/tips/coding.in.go.md)
-- [x][new 与 make 的差别](golang/tips/new.vs.make.md)
+- [new 与 make 的差别](golang/tips/go.make.vs.new.md)
 
 upgrade:
 
