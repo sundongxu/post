@@ -7,6 +7,7 @@ tags:
     - Golang
     - tips
 ---
+
 Go语言中new和make是内建的两个函数，主要用来创建分配类型内存
 
 ## new(T) 返回的是 T 的指针
