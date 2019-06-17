@@ -1,10 +1,13 @@
 ---
 title: "Kubectl wiki"
 date: 2019-06-17T23:45:12+08:00
-draft: true
+categories:
+    - Knowledge
+tags: 
+    - kubernetes
+    - k8s
+    - kubectl
 ---
-
-# kubectl wiki
 
 基于 kubernetes v1.14.3 版本
 
