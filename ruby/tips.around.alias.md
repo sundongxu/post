@@ -90,6 +90,23 @@ Klass.new.salute
 - include 将 module 加入到 类 继承链的上方
 - prepend 将 module 加入到 类 继承链的下方
 
+下方的位置，正好是方法查找时优先查找的位置，利用这一优势，可以覆写当前类的同名方法，同时通过 super 关键字还可以调用到该类中的原始方法，实现同样的目的而不需要 alias method，不会污染作用域方法
+
+```
+module LengthMixin
+    def length
+        "Length of'#{self}'is: #{super}"
+    end
+end
+
+class String
+  prepend LengthMixin
+end
+
+"abc".length
+#=> "Length of'abc'is: 3"
+```
+
 同时想知道怎么样理解和处理 `Prepend` 和 `Alias method chain`  可以参考 NewRelic 工程师团队的博客文章 [ruby-agent-module-prepend-alias-method-chains](https://blog.newrelic.com/engineering/ruby-agent-module-prepend-alias-method-chains/)
 
 对于 Alias method chain 和 prepend 之间使用的坑，NewRelic 工程师团队也给出了建议:
