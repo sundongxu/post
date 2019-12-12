@@ -2,63 +2,46 @@
 
 个人随手整理的一些文章
 
-## Backend
+## 文章列表
 
 - [DNS 域名系统](backend/dns.md)
 - [从入门到放弃 - Raft](backend/raft.md)
-
-## Golang
-
-basic:
-
-- [Go Modules 简单介绍](golang/basic/go.mod.md)
-- [x][channel 使用归纳](golang/basic/channel.important.md)
-
-package:
-
-- [bufio 如何使用](golang/package/bufio.md)
-- [reflect 如何使用](golang/package/reflect.md)
-- [sync.Pool 的实现原理和适用场景]((golang/package/sync.pool.md))
-
-tips:
-
-- [一些简单的代码规范](golang/tips/coding.in.go.md)
-- [new 与 make 的差别](golang/tips/go.make.vs.new.md)
-
-upgrade:
-
-- [interface 从理解到深入](golang/upgrade/interface.md)
-- [database/sql: Stmt的使用以及坑](golang/upgrade/database.sql.driver.stmt.md)
-- [内存排布](golang/upgrade/memory.layout.md)
-- [x][GPM 模型](golang/upgrade/gpm.md)
-- [x][指针陷阱](golang/upgrade/pointer.trap.md)
-- [x][内存管理](golang/upgrade/memory.alloc.md)
-- [x][GC 介绍](golang/upgrade/gc.intro.md)
-- [x][groutine 调度介绍](golang/upgrade/groutine.schduler.md)
-- [x][channel 调度介绍](golang/upgrade/channel.schduler.md)
-
-## MySQL
-
-- [MySQL 基础入门知识](mysql/basic.md)
-
-## Regexp
-
-- [正则表达式基本使用介绍](mysql/basic.md)
-
-## HTML
-
-- [HTML 入门笔记 － 初识HTML](html/intro.md)
-
-## CSS
-
 - [CSS入门笔记 － 初识CSS](css/intro-1.md)
 - [CSS入门笔记 － 认识盒子模型](css/intro-box.md)
-
-## Javascript
-
+- [Docker 常用命令](docker/basic.cmd.md)
+- [Git 常用命令](git/basic.md)
+- [Channel](golang/basic/channel.important.md)
+- [Go Modules 简单介绍](golang/basic/go.mod.md)
+- [ 初步了解 golang bufio pkg](golang/package/bufio.md)
+- [初步了解 golang reflect pkg](golang/package/reflect.md)
+- [sync.Pool 的实现原理和适用场景](golang/package/sync.pool.md)
+- [如何写好 golang 代码的一些 tips](golang/tips/coding.in.go.md)
+- [new 与 make 的差别](golang/tips/go.make.vs.new.md)
+- [Channel](golang/upgrade/channel.schduler.md)
+- [database/sql: Stmt的使用以及坑](golang/upgrade/database.sql.driver.stmt.md)
+- [Gc](golang/upgrade/gc.intro.md)
+- [初步了解使用 go AST 知识](golang/upgrade/go.ast.usage.md)
+- [Goroutine](golang/upgrade/goroutine.schduler.md)
+- [Gpm](golang/upgrade/gpm.md)
+- [Go Interface 从理解到深入](golang/upgrade/interface.md)
+- [Memory](golang/upgrade/memory.alloc.md)
+- [Go 内存排布](golang/upgrade/memory.layout.md)
+- [Pointer](golang/upgrade/pointer.trap.md)
+- [HTML 入门笔记 － 初识HTML](html/intro.md)
 - [js 保留关键字以及危险变量名](js/danger.md)
 - [js intro 基本介绍](js/intro-1.md)
 - [js intro 类型/值/变量](js/intro-2.md)
 - [js intro 表达式和运算符](js/intro-3.md)
 - [js intro 语句](js/intro-4.md)
 - [js intro 对象](js/intro-5.md)
+- [Kubectl wiki](k8s/kubectl.md)
+- [知名公司工程博客](knowledge/company_blog.md)
+- [程序员 2018 年度总结](life/2018.summary.md)
+- [Linux 常用命令 find](linux/basic_usage/find.md)
+- [Linux 常用命令 grep](linux/basic_usage/grep.md)
+- [Linux 常用命令 ls](linux/basic_usage/ls.md)
+- [MySQL的基础使用相关知识](mysql/basic.md)
+- [正则表达式基本使用介绍](regexp/basic.md)
+- [Best Practice about ROR](ruby/best.practice.on.rails.md)
+- [Around Alias](ruby/tips.around.alias.md)
+- [常见英文符号](tools/symbol.md)
