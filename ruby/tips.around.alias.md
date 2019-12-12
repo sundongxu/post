@@ -1,9 +1,13 @@
 ---
 title: "Around Alias"
-date: 2019-12-12T22:56:33+08:00
-draft: true
+date: 2019-12-12T22:56:34+08:00
+categories:
+    - Ruby
+tags: 
+    - Ruby
+    - Rails
+    - tips
 ---
-
 
 ## Ruby 中的环绕别名 (around Alias) 带来的一系列 Google
 
